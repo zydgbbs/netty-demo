@@ -19,7 +19,7 @@ public class NIOClient {
             }
         }
         //如果连接成功，就发送数据
-        String str = "hello~";
+        String str = "hello，资源帝国~";
         ByteBuffer buffer = ByteBuffer.wrap(str.getBytes());
         System.out.println("发送的数据是："+new String(buffer.array()));
         //发送数据，将buffer数据写入Channel

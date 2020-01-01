@@ -50,6 +50,13 @@ public class NIOServer {
                     //通过key反向获取到对应的Channel
                     SocketChannel channel = (SocketChannel)key.channel();
                     //获取到该Channel关联的buffer
+
+                    //方法一
+                    /*ByteBuffer buffer = ByteBuffer.allocate(512);
+                    int read = channel.read(buffer);
+                    System.out.println("from 客户端 "+new String(buffer.array(),0,read));*/
+
+                    //方法二
                     ByteBuffer buffer = (ByteBuffer)key.attachment();
                     channel.read(buffer);
                     System.out.println("from 客户端 "+new String(buffer.array()));
